@@ -1,0 +1,388 @@
+# aedb91afa28a54ed1ca8d9e49f758575e2ab55e72391ac3fd159ebce7c4469a3
+logging:
+  level: ERROR
+  logfile: ./pygeoapi.log
+metadata:
+  contact:
+    address: Mombertstr. 2
+    city: Karlsruhe
+    country: Germany
+    email: info@hydrocode.de
+    hours: Mo-Fr 08:00-16:00
+    instructions: During hours of service. Off on weekends.
+    name: "M\xE4licke, Mirko"
+    phone: +xx-xxx-xxx-xxxx
+    position: hydrocode CEO
+    postalcode: 76131
+    role: pointOfContact
+    stateorprovince: "Baden-W\xFCrttemberg"
+    url: https://hydrocode.de
+  identification:
+    description: Geostat API provides OGC API conform access to data samples from
+      the geostatistical applications on https://geostat.hydrocode.de.
+    keywords:
+    - geospatial
+    - data
+    - api
+    - geostatistics
+    keywords_type: theme
+    terms_of_service: https://creativecommons.org/licenses/by/4.0/
+    title: hydrocode Geostat API
+    url: http://api.geostat.hydrocode.de
+  license:
+    name: CC-BY 4.0 license
+    url: https://creativecommons.org/licenses/by/4.0/
+  provider:
+    name: "hydrocode Reid & M\xE4licke GbR"
+    url: https://hydrocode.de
+resources:
+  '12':
+    description: 'Resample of: Regular grid sample of Attert 2014 <ID=10>
+
+      The original field has been sampled at each grid cell to derive a full sample
+      of daily rainfall sums'
+    extents:
+      spatial:
+        bbox:
+        - - -180
+          - -90
+          - 180
+          - 90
+        crs: http://www.opengis.net/def/OGC/1.3/CRS84
+    keywords:
+    - geostatistics
+    - hydrocode
+    links:
+    - href: https://geostat.hydrocode.de
+      rel: external
+      title: Hydrocode Geostatistics educational applications
+      type: text/html
+    providers:
+    - data: 12
+      id_field: id
+      name: geostat_api.feature_provider.DataUploadProvider
+      type: feature
+    title: Attert 2014 - Full sample
+    type: collection
+  '13':
+    description: "\nRe-sample of: Regular grid sample of Attert 2014 <ID=10>. \nThe\
+      \ original grid was re-sampled at a thinner 8x10 grid, which results in a symmetric\
+      \ step with of 3 grid units in both main directions."
+    extents:
+      spatial:
+        bbox:
+        - - -180
+          - -90
+          - 180
+          - 90
+        crs: http://www.opengis.net/def/OGC/1.3/CRS84
+    keywords:
+    - geostatistics
+    - hydrocode
+    links:
+    - href: https://geostat.hydrocode.de
+      rel: external
+      title: Hydrocode Geostatistics educational applications
+      type: text/html
+    providers:
+    - data: 13
+      id_field: id
+      name: geostat_api.feature_provider.DataUploadProvider
+      type: feature
+    title: Attert 2014 - Thin sample
+    type: collection
+  '14':
+    description: 'Re-sample of: Regular grid sample of Attert 2015 <ID=11>. The original
+      grid was re-sampled at a thinner 8x10 grid, which results in a symmetric step
+      with of 3 grid units in both main directions.'
+    extents:
+      spatial:
+        bbox:
+        - - -180
+          - -90
+          - 180
+          - 90
+        crs: http://www.opengis.net/def/OGC/1.3/CRS84
+    keywords:
+    - geostatistics
+    - hydrocode
+    links:
+    - href: https://geostat.hydrocode.de
+      rel: external
+      title: Hydrocode Geostatistics educational applications
+      type: text/html
+    providers:
+    - data: 14
+      id_field: id
+      name: geostat_api.feature_provider.DataUploadProvider
+      type: feature
+    title: Attert 2015 - Thin Sample
+    type: collection
+  '15':
+    description: 'Resample of: Regular grid sample of Attert 2015 <ID=11> The original
+      field has been sampled at each grid cell to derive a full sample of daily rainfall
+      sums'
+    extents:
+      spatial:
+        bbox:
+        - - -180
+          - -90
+          - 180
+          - 90
+        crs: http://www.opengis.net/def/OGC/1.3/CRS84
+    keywords:
+    - geostatistics
+    - hydrocode
+    links:
+    - href: https://geostat.hydrocode.de
+      rel: external
+      title: Hydrocode Geostatistics educational applications
+      type: text/html
+    providers:
+    - data: 15
+      id_field: id
+      name: geostat_api.feature_provider.DataUploadProvider
+      type: feature
+    title: Attert 2015 - Full sample
+    type: collection
+  '16':
+    description: Sample dataset of real measurements of heavy metal pollution in the
+      topsoil on a 15x15 meter plot along the river Meuse. This sample uses the **zinc**
+      concentration as a value and the coordinates were rescaled to fit a 100x100
+      grid for easier handling. Note that this changes the actual positions.
+    extents:
+      spatial:
+        bbox:
+        - - -180
+          - -90
+          - 180
+          - 90
+        crs: http://www.opengis.net/def/OGC/1.3/CRS84
+    keywords:
+    - geostatistics
+    - hydrocode
+    links:
+    - href: https://geostat.hydrocode.de
+      rel: external
+      title: Hydrocode Geostatistics educational applications
+      type: text/html
+    providers:
+    - data: 16
+      id_field: id
+      name: geostat_api.feature_provider.DataUploadProvider
+      type: feature
+    title: Meuse Zinc
+    type: collection
+  '17':
+    description: Sample dataset of real measurements of heavy metal pollution in the
+      topsoil on a 15x15 meter plot along the river Meuse. This sample uses the **copper**
+      concentration as a value and the coordinates were rescaled to fit a 100x100
+      grid for easier handling. Note that this changes the actual positions.
+    extents:
+      spatial:
+        bbox:
+        - - -180
+          - -90
+          - 180
+          - 90
+        crs: http://www.opengis.net/def/OGC/1.3/CRS84
+    keywords:
+    - geostatistics
+    - hydrocode
+    links:
+    - href: https://geostat.hydrocode.de
+      rel: external
+      title: Hydrocode Geostatistics educational applications
+      type: text/html
+    providers:
+    - data: 17
+      id_field: id
+      name: geostat_api.feature_provider.DataUploadProvider
+      type: feature
+    title: Meuse Copper
+    type: collection
+  '18':
+    description: Sample dataset of real measurements of heavy metal pollution in the
+      topsoil on a 15x15 meter plot along the river Meuse. This sample uses the **cadmium**
+      concentration as a value and the coordinates were rescaled to fit a 100x100
+      grid for easier handling. Note that this changes the actual positions.
+    extents:
+      spatial:
+        bbox:
+        - - -180
+          - -90
+          - 180
+          - 90
+        crs: http://www.opengis.net/def/OGC/1.3/CRS84
+    keywords:
+    - geostatistics
+    - hydrocode
+    links:
+    - href: https://geostat.hydrocode.de
+      rel: external
+      title: Hydrocode Geostatistics educational applications
+      type: text/html
+    providers:
+    - data: 18
+      id_field: id
+      name: geostat_api.feature_provider.DataUploadProvider
+      type: feature
+    title: Meuse Cadmium
+    type: collection
+  '3':
+    description: 'Sample dataset of real measurements of heavy metal pollution in
+      the topsoil on a 15x15 meter plot along the river Meuse.
+
+      This sample uses the lead concentration as a value and the coordinates were
+      rescaled to fit a 100x100 grid for easier handling. Note that this changes the
+      actual positions.'
+    extents:
+      spatial:
+        bbox:
+        - - -180
+          - -90
+          - 180
+          - 90
+        crs: http://www.opengis.net/def/OGC/1.3/CRS84
+    keywords:
+    - geostatistics
+    - hydrocode
+    links:
+    - href: https://geostat.hydrocode.de
+      rel: external
+      title: Hydrocode Geostatistics educational applications
+      type: text/html
+    providers:
+    - data: 3
+      id_field: id
+      name: geostat_api.feature_provider.DataUploadProvider
+      type: feature
+    title: Meuse Lead
+    type: collection
+  '4':
+    description: This dataset has no description
+    extents:
+      spatial:
+        bbox:
+        - - -180
+          - -90
+          - 180
+          - 90
+        crs: http://www.opengis.net/def/OGC/1.3/CRS84
+    keywords:
+    - geostatistics
+    - hydrocode
+    links:
+    - href: https://geostat.hydrocode.de
+      rel: external
+      title: Hydrocode Geostatistics educational applications
+      type: text/html
+    providers:
+    - data: 4
+      id_field: id
+      name: geostat_api.feature_provider.DataUploadProvider
+      type: feature
+    title: Berea sandstone random sample (N=100)
+    type: collection
+  '6':
+    description: 'Random sample of Pancake <ID=5>.
+
+
+      The original pancake image dataset is part of [SciKit-GStat](https://github.com/mmaelicke/scikit-gstat).
+      The 8bit red channel values were sampled at 80 random points using a seed of
+      `42`. '
+    extents:
+      spatial:
+        bbox:
+        - - -180
+          - -90
+          - 180
+          - 90
+        crs: http://www.opengis.net/def/OGC/1.3/CRS84
+    keywords:
+    - geostatistics
+    - hydrocode
+    links:
+    - href: https://geostat.hydrocode.de
+      rel: external
+      title: Hydrocode Geostatistics educational applications
+      type: text/html
+    providers:
+    - data: 6
+      id_field: id
+      name: geostat_api.feature_provider.DataUploadProvider
+      type: feature
+    title: Random pancake sample (N=80)
+    type: collection
+  '8':
+    description: 'Based  on dataset: Regular grid sample of Attert 2013 <ID=7>.
+
+      For this sample, each grid cell was sampled to calculate variograms on the dense
+      field.'
+    extents:
+      spatial:
+        bbox:
+        - - -180
+          - -90
+          - 180
+          - 90
+        crs: http://www.opengis.net/def/OGC/1.3/CRS84
+    keywords:
+    - geostatistics
+    - hydrocode
+    links:
+    - href: https://geostat.hydrocode.de
+      rel: external
+      title: Hydrocode Geostatistics educational applications
+      type: text/html
+    providers:
+    - data: 8
+      id_field: id
+      name: geostat_api.feature_provider.DataUploadProvider
+      type: feature
+    title: Attert 2013 - Full sample
+    type: collection
+  '9':
+    description: 'Re-sample of: Regular grid sample of Attert 2013 <ID=7>.
+
+      The original grid was re-sampled at a thinner 8x10 grid, which results in a
+      symmetric step with of 3 grid units in both main directions.'
+    extents:
+      spatial:
+        bbox:
+        - - -180
+          - -90
+          - 180
+          - 90
+        crs: http://www.opengis.net/def/OGC/1.3/CRS84
+    keywords:
+    - geostatistics
+    - hydrocode
+    links:
+    - href: https://geostat.hydrocode.de
+      rel: external
+      title: Hydrocode Geostatistics educational applications
+      type: text/html
+    providers:
+    - data: 9
+      id_field: id
+      name: geostat_api.feature_provider.DataUploadProvider
+      type: feature
+    title: Attert 2013 - Thin sample
+    type: collection
+server:
+  bind:
+    host: 0.0.0.0
+    port: 5000
+  cors: true
+  encoding: utf-8
+  language: en-US
+  limit: 10
+  map:
+    attribution: <a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia
+      maps</a> | Map data &copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap
+      contributors</a>
+    url: https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png
+  mimetype: application/json; charset=UTF-8
+  pretty_print: true
+  url: http://localhost:5000/

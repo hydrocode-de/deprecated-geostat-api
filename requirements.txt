@@ -1,0 +1,5 @@
+pygeoapi
+skgstat_uncertainty
+requests
+pyyaml
+fire
