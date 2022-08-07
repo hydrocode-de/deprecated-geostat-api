@@ -7,35 +7,23 @@ from skgstat_uncertainty.models import DataUpload
 from geostat_api import DATA_PATH, DB_NAME
 
 
-# hacky approach to cache the data
-SOURCES = {}
-
-GEOJSON = {
-    'type': 'FeatureCollection',
-    'features': []
-}
-
-FEATURE = {
-    'type': 'Feature',
-    'geometry': {
-        'type': 'Point',
-        'coordinates': []
-    },
-    'properties': {
-    }
-}
-
 def extract_features(dataset: DataUpload):
     features = []
     data = dataset.data
     for i, (x, y, v) in enumerate(zip(data['x'], data['y'], data['v'])):    
         f = {
-            **FEATURE,
-            **dict(
-                id=i,
-                geometry=dict(coordinates=[x, y]),
-                properties=dict(value=v, x=x, y=y),
-            )
+            'type': 'Feature',
+            'id': i,
+            'geometry': {
+                'type': 'Point',
+                'coordinates': [x, y]
+            },
+            'properties': {
+                'value': v,
+                'x': x,
+                'y': y
+                
+            }
         }
         features.append(f)
 
@@ -53,7 +41,7 @@ class DataUploadProvider(BaseProvider):
         self.dataset = self.api.get_upload_data(id=self.data)
         self.features = extract_features(self.dataset)
 
-    def query(self, startindex=0, limit=10, **kwargs):
+    def query(self, startindex=0, limit=100, **kwargs):
 
         # get the features
         features = self.features#[startindex:limit]
@@ -62,7 +50,11 @@ class DataUploadProvider(BaseProvider):
             data_type=self.dataset.data_type,
             **{k: v for k, v in self.dataset.data.items() if k not in ['x', 'y', 'v', 'field']}
         )
-        geojson = {**GEOJSON, **dict(features=features, metadata=meta)}
+        geojson = {
+            'type': 'FeatureCollection',
+    '       features': features,
+            'metadata': meta
+        }
 
         return geojson
 
