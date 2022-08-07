@@ -15,8 +15,13 @@ def create_resource_config(dataset: DataUpload, title: str = None, links: List[d
     # scrape for DOIs in origin
     if 'origin' in dataset.data:
         dois = re.findall(r'(10[.]\d{4,}/[a-z 0-9 -]+)', dataset.data['origin'])
-        for doi in dois:
-            links.append({'type': 'text/html', 'rel': 'cite-as', 'title': f'DOI: {doi}', 'href': f'https://doi.org/{doi}'})
+    else:
+        dois = []
+    if 'doi' in dataset.data:
+        dois.append(dataset.data['doi'])
+    for doi in dois:
+        links.append({'type': 'text/html', 'rel': 'cite-as', 'title': f'DOI: {doi}', 'href': f'https://doi.org/{doi}'})
+        
 
     if 'crs' in dataset.data:
         # TODO: derive using DataUpload Model
