@@ -6,8 +6,21 @@ import hashlib
 from yaml import load, Loader, dump, Dumper
 from skgstat_uncertainty.models import DataUpload
 from skgstat_uncertainty.api import API
+from shapely.geometry import Point
+from shapely.geometry.collection import GeometryCollection
 
 from geostat_api import CONFIG_FILE, DATA_PATH, DB_NAME, OPENAPI_FILE
+
+
+def skgstat_to_shapely(dataset: DataUpload) -> GeometryCollection:
+    """Convert the WGS84 coordinates of a DataUpload instance to a shapely GeometryCollection"""
+    # get the coordinates
+    x, y = dataset.to_wgs84()
+
+    # create the collection
+    col = GeometryCollection([Point(*xy) for xy in zip(x, y)])
+
+    return col
 
 
 def create_resource_config(dataset: DataUpload, title: str = None, links: List[dict] = []) -> dict:
@@ -25,7 +38,7 @@ def create_resource_config(dataset: DataUpload, title: str = None, links: List[d
 
     if 'crs' in dataset.data:
         # TODO: derive using DataUpload Model
-        spatial_extent = {'bbox': [[-180, -90, 180, 90]], 'crs': 'http://www.opengis.net/def/OGC/1.3/CRS84'}
+        spatial_extent = {'bbox': [list(skgstat_to_shapely(dataset).bounds)], 'crs': 'http://www.opengis.net/def/OGC/1.3/CRS84'}
     else:
         spatial_extent = {'bbox': [[-180, -90, 180, 90]], 'crs': 'http://www.opengis.net/def/OGC/1.3/CRS84'}
     

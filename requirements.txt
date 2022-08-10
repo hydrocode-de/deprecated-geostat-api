@@ -3,3 +3,4 @@ skgstat_uncertainty
 requests
 pyyaml
 fire
+shapely
