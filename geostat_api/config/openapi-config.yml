@@ -248,13 +248,45 @@ paths:
         required: false
         schema:
           items:
-            enum: []
+            enum:
+            - value
+            - x
+            - y
+            - crs
             type: string
           type: array
         style: form
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         '200':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
@@ -288,6 +320,28 @@ paths:
         '500':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
       summary: Get Attert 2014 - Full sample item by id
+      tags:
+      - '12'
+  /collections/12/queryables:
+    get:
+      description: 'Resample of: Regular grid sample of Attert 2014 <ID=10>
+
+        The original field has been sampled at each grid cell to derive a full sample
+        of daily rainfall sums'
+      operationId: get12Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Attert 2014 - Full sample queryables
       tags:
       - '12'
   /collections/13:
@@ -330,13 +384,45 @@ paths:
         required: false
         schema:
           items:
-            enum: []
+            enum:
+            - value
+            - x
+            - y
+            - crs
             type: string
           type: array
         style: form
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         '200':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
@@ -369,6 +455,27 @@ paths:
         '500':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
       summary: Get Attert 2014 - Thin sample item by id
+      tags:
+      - '13'
+  /collections/13/queryables:
+    get:
+      description: "\nRe-sample of: Regular grid sample of Attert 2014 <ID=10>. \n\
+        The original grid was re-sampled at a thinner 8x10 grid, which results in\
+        \ a symmetric step with of 3 grid units in both main directions."
+      operationId: get13Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Attert 2014 - Thin sample queryables
       tags:
       - '13'
   /collections/14:
@@ -411,13 +518,45 @@ paths:
         required: false
         schema:
           items:
-            enum: []
+            enum:
+            - value
+            - x
+            - y
+            - crs
             type: string
           type: array
         style: form
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         '200':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
@@ -450,6 +589,27 @@ paths:
         '500':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
       summary: Get Attert 2015 - Thin Sample item by id
+      tags:
+      - '14'
+  /collections/14/queryables:
+    get:
+      description: 'Re-sample of: Regular grid sample of Attert 2015 <ID=11>. The
+        original grid was re-sampled at a thinner 8x10 grid, which results in a symmetric
+        step with of 3 grid units in both main directions.'
+      operationId: get14Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Attert 2015 - Thin Sample queryables
       tags:
       - '14'
   /collections/15:
@@ -492,13 +652,45 @@ paths:
         required: false
         schema:
           items:
-            enum: []
+            enum:
+            - value
+            - x
+            - y
+            - crs
             type: string
           type: array
         style: form
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         '200':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
@@ -531,6 +723,27 @@ paths:
         '500':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
       summary: Get Attert 2015 - Full sample item by id
+      tags:
+      - '15'
+  /collections/15/queryables:
+    get:
+      description: 'Resample of: Regular grid sample of Attert 2015 <ID=11> The original
+        field has been sampled at each grid cell to derive a full sample of daily
+        rainfall sums'
+      operationId: get15Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Attert 2015 - Full sample queryables
       tags:
       - '15'
   /collections/16:
@@ -577,13 +790,45 @@ paths:
         required: false
         schema:
           items:
-            enum: []
+            enum:
+            - value
+            - x
+            - y
+            - crs
             type: string
           type: array
         style: form
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         '200':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
@@ -618,6 +863,29 @@ paths:
         '500':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
       summary: Get Meuse Zinc item by id
+      tags:
+      - '16'
+  /collections/16/queryables:
+    get:
+      description: Sample dataset of real measurements of heavy metal pollution in
+        the topsoil on a 15x15 meter plot along the river Meuse. This sample uses
+        the **zinc** concentration as a value and the coordinates were rescaled to
+        fit a 100x100 grid for easier handling. Note that this changes the actual
+        positions.
+      operationId: get16Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Meuse Zinc queryables
       tags:
       - '16'
   /collections/17:
@@ -664,13 +932,45 @@ paths:
         required: false
         schema:
           items:
-            enum: []
+            enum:
+            - value
+            - x
+            - y
+            - crs
             type: string
           type: array
         style: form
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         '200':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
@@ -705,6 +1005,29 @@ paths:
         '500':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
       summary: Get Meuse Copper item by id
+      tags:
+      - '17'
+  /collections/17/queryables:
+    get:
+      description: Sample dataset of real measurements of heavy metal pollution in
+        the topsoil on a 15x15 meter plot along the river Meuse. This sample uses
+        the **copper** concentration as a value and the coordinates were rescaled
+        to fit a 100x100 grid for easier handling. Note that this changes the actual
+        positions.
+      operationId: get17Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Meuse Copper queryables
       tags:
       - '17'
   /collections/18:
@@ -751,13 +1074,45 @@ paths:
         required: false
         schema:
           items:
-            enum: []
+            enum:
+            - value
+            - x
+            - y
+            - crs
             type: string
           type: array
         style: form
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         '200':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
@@ -794,6 +1149,167 @@ paths:
       summary: Get Meuse Cadmium item by id
       tags:
       - '18'
+  /collections/18/queryables:
+    get:
+      description: Sample dataset of real measurements of heavy metal pollution in
+        the topsoil on a 15x15 meter plot along the river Meuse. This sample uses
+        the **cadmium** concentration as a value and the coordinates were rescaled
+        to fit a 100x100 grid for easier handling. Note that this changes the actual
+        positions.
+      operationId: get18Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Meuse Cadmium queryables
+      tags:
+      - '18'
+  /collections/19:
+    get:
+      description: Sample dataset of real measurements of heavy metal pollution in
+        the topsoil on a 15x15 meter plot along the river Meuse. This sample uses
+        the lead concentration as a value and the the projected original coordinates
+        CRS Amersfoort / RD New -- Netherlands - Holland - Dutch - EPSG:28992
+      operationId: describe19Collection
+      parameters:
+      - $ref: '#/components/parameters/f'
+      - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Collection
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Meuse Lead crs metadata
+      tags:
+      - '19'
+  /collections/19/items:
+    get:
+      description: Sample dataset of real measurements of heavy metal pollution in
+        the topsoil on a 15x15 meter plot along the river Meuse. This sample uses
+        the lead concentration as a value and the the projected original coordinates
+        CRS Amersfoort / RD New -- Netherlands - Holland - Dutch - EPSG:28992
+      operationId: get19Features
+      parameters:
+      - *id001
+      - *id002
+      - $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/parameters/bbox
+      - $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/parameters/limit
+      - description: The properties that should be included for each feature. The
+          parameter value is a comma-separated list of property names.
+        explode: false
+        in: query
+        name: properties
+        required: false
+        schema:
+          items:
+            enum:
+            - value
+            - x
+            - y
+            - crs
+            type: string
+          type: array
+        style: form
+      - $ref: '#/components/parameters/skipGeometry'
+      - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
+      - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
+      responses:
+        '200':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Meuse Lead crs items
+      tags:
+      - '19'
+  /collections/19/items/{featureId}:
+    get:
+      description: Sample dataset of real measurements of heavy metal pollution in
+        the topsoil on a 15x15 meter plot along the river Meuse. This sample uses
+        the lead concentration as a value and the the projected original coordinates
+        CRS Amersfoort / RD New -- Netherlands - Holland - Dutch - EPSG:28992
+      operationId: get19Feature
+      parameters:
+      - $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/parameters/featureId
+      - $ref: '#/components/parameters/f'
+      - $ref: '#/components/parameters/lang'
+      responses:
+        '200':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Feature
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Meuse Lead crs item by id
+      tags:
+      - '19'
+  /collections/19/queryables:
+    get:
+      description: Sample dataset of real measurements of heavy metal pollution in
+        the topsoil on a 15x15 meter plot along the river Meuse. This sample uses
+        the lead concentration as a value and the the projected original coordinates
+        CRS Amersfoort / RD New -- Netherlands - Holland - Dutch - EPSG:28992
+      operationId: get19Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Meuse Lead crs queryables
+      tags:
+      - '19'
   /collections/3:
     get:
       description: 'Sample dataset of real measurements of heavy metal pollution in
@@ -840,13 +1356,45 @@ paths:
         required: false
         schema:
           items:
-            enum: []
+            enum:
+            - value
+            - x
+            - y
+            - crs
             type: string
           type: array
         style: form
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         '200':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
@@ -882,6 +1430,30 @@ paths:
         '500':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
       summary: Get Meuse Lead item by id
+      tags:
+      - '3'
+  /collections/3/queryables:
+    get:
+      description: 'Sample dataset of real measurements of heavy metal pollution in
+        the topsoil on a 15x15 meter plot along the river Meuse.
+
+        This sample uses the lead concentration as a value and the coordinates were
+        rescaled to fit a 100x100 grid for easier handling. Note that this changes
+        the actual positions.'
+      operationId: get3Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Meuse Lead queryables
       tags:
       - '3'
   /collections/4:
@@ -920,13 +1492,45 @@ paths:
         required: false
         schema:
           items:
-            enum: []
+            enum:
+            - value
+            - x
+            - y
+            - crs
             type: string
           type: array
         style: form
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         '200':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
@@ -957,6 +1561,25 @@ paths:
         '500':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
       summary: Get Berea sandstone random sample (N=100) item by id
+      tags:
+      - '4'
+  /collections/4/queryables:
+    get:
+      description: This dataset has no description
+      operationId: get4Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Berea sandstone random sample (N=100) queryables
       tags:
       - '4'
   /collections/6:
@@ -1005,13 +1628,45 @@ paths:
         required: false
         schema:
           items:
-            enum: []
+            enum:
+            - value
+            - x
+            - y
+            - crs
             type: string
           type: array
         style: form
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         '200':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
@@ -1047,6 +1702,30 @@ paths:
         '500':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
       summary: Get Random pancake sample (N=80) item by id
+      tags:
+      - '6'
+  /collections/6/queryables:
+    get:
+      description: 'Random sample of Pancake <ID=5>.
+
+
+        The original pancake image dataset is part of [SciKit-GStat](https://github.com/mmaelicke/scikit-gstat).
+        The 8bit red channel values were sampled at 80 random points using a seed
+        of `42`. '
+      operationId: get6Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Random pancake sample (N=80) queryables
       tags:
       - '6'
   /collections/8:
@@ -1091,13 +1770,45 @@ paths:
         required: false
         schema:
           items:
-            enum: []
+            enum:
+            - value
+            - x
+            - y
+            - crs
             type: string
           type: array
         style: form
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         '200':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
@@ -1131,6 +1842,28 @@ paths:
         '500':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
       summary: Get Attert 2013 - Full sample item by id
+      tags:
+      - '8'
+  /collections/8/queryables:
+    get:
+      description: 'Based  on dataset: Regular grid sample of Attert 2013 <ID=7>.
+
+        For this sample, each grid cell was sampled to calculate variograms on the
+        dense field.'
+      operationId: get8Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Attert 2013 - Full sample queryables
       tags:
       - '8'
   /collections/9:
@@ -1175,13 +1908,45 @@ paths:
         required: false
         schema:
           items:
-            enum: []
+            enum:
+            - value
+            - x
+            - y
+            - crs
             type: string
           type: array
         style: form
       - $ref: '#/components/parameters/skipGeometry'
       - $ref: https://raw.githubusercontent.com/opengeospatial/ogcapi-records/master/core/openapi/parameters/sortby.yaml
       - $ref: '#/components/parameters/startindex'
+      - explode: false
+        in: query
+        name: value
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: x
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: y
+        required: false
+        schema:
+          type: number
+        style: form
+      - explode: false
+        in: query
+        name: crs
+        required: false
+        schema:
+          type: string
+        style: form
       responses:
         '200':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/Features
@@ -1215,6 +1980,28 @@ paths:
         '500':
           $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
       summary: Get Attert 2013 - Thin sample item by id
+      tags:
+      - '9'
+  /collections/9/queryables:
+    get:
+      description: 'Re-sample of: Regular grid sample of Attert 2013 <ID=7>.
+
+        The original grid was re-sampled at a thinner 8x10 grid, which results in
+        a symmetric step with of 3 grid units in both main directions.'
+      operationId: get9Queryables
+      parameters:
+      - *id001
+      - *id002
+      responses:
+        '200':
+          $ref: '#/components/responses/Queryables'
+        '400':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/InvalidParameter
+        '404':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/NotFound
+        '500':
+          $ref: http://schemas.opengis.net/ogcapi/features/part1/1.0/openapi/ogcapi-features-1.yaml#/components/responses/ServerError
+      summary: Get Attert 2013 - Thin sample queryables
       tags:
       - '9'
   /conformance:
@@ -1308,6 +2095,11 @@ tags:
     concentration as a value and the coordinates were rescaled to fit a 100x100 grid
     for easier handling. Note that this changes the actual positions.
   name: '18'
+- description: Sample dataset of real measurements of heavy metal pollution in the
+    topsoil on a 15x15 meter plot along the river Meuse. This sample uses the lead
+    concentration as a value and the the projected original coordinates CRS Amersfoort
+    / RD New -- Netherlands - Holland - Dutch - EPSG:28992
+  name: '19'
 - description: 'Sample dataset of real measurements of heavy metal pollution in the
     topsoil on a 15x15 meter plot along the river Meuse.
 
