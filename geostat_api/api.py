@@ -1,4 +1,3 @@
-from calendar import firstweekday
 import os
 
 def run():
