@@ -1,7 +1,7 @@
 # 3dfae0ded9e7b1864e67878d6f7481229dec943be286133c16bd3a66a550181a
 logging:
   level: ERROR
-  logfile: ./pygeoapi.log
+  logfile: /tmp/pygeoapi.log
 metadata:
   contact:
     address: Mombertstr. 2
@@ -425,4 +425,4 @@ server:
     url: https://maps.wikimedia.org/osm-intl/{z}/{x}/{y}.png
   mimetype: application/json; charset=UTF-8
   pretty_print: true
-  url: http://localhost:5000/
+  url: ${PYGEOAPI_BASE_URL}
