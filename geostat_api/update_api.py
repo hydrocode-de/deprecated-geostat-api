@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Dict
 import re
 import os
 import hashlib
@@ -71,6 +71,25 @@ def create_resource_config(dataset: DataUpload, title: str = None, links: List[d
     return conf
 
 
+def create_process_config() -> Dict[str, dict]:
+    """"""
+    processes = {}
+
+    # Variogram
+    processes['variogram'] = {
+        'type': 'process',
+        'processor': {'name': 'geostat_api.processes.variogram.VariogramProcessor'},
+    }
+
+    # hello-world
+    processes['hello-world'] = {
+        'type': 'process',
+        'processor': {'name': 'HelloWorld'},
+    }
+
+    return processes
+
+
 def get_db_hash():
     # hash the database
     with open(os.path.join(DATA_PATH, DB_NAME), 'br') as f:
@@ -116,6 +135,10 @@ def update_resources(drop_old: bool = True):
         # slug = dataset.upload_name.replace(' ', '_').lower()
 
         resources[f'{dataset.id}'] = resource_config
+
+    # get processes
+    processes = create_process_config()
+    resources.update(processes)
 
     # update the config
     api_conf['resources'] = resources
