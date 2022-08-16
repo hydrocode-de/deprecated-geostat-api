@@ -398,6 +398,14 @@ resources:
       type: feature
     title: Attert 2013 - Thin sample
     type: collection
+  hello-world:
+    processor:
+      name: HelloWorld
+    type: process
+  variogram:
+    processor:
+      name: geostat_api.processes.variogram.VariogramProcessor
+    type: process
 server:
   bind:
     host: 0.0.0.0
@@ -406,6 +414,10 @@ server:
   encoding: utf-8
   language: en-US
   limit: 10
+  manager:
+    connection: /tmp/pygeoapi-process-manager.db
+    name: TinyDB
+    output_dir: /tmp/
   map:
     attribution: <a href="https://wikimediafoundation.org/wiki/Maps_Terms_of_Use">Wikimedia
       maps</a> | Map data &copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap
