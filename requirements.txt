@@ -4,3 +4,5 @@ requests
 pyyaml
 fire
 shapely
+flask_cors
+jinja2==3.0.3
