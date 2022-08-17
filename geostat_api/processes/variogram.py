@@ -7,7 +7,7 @@ from geostat_api.processes import util
 
 
 PROCESS_METADATA = {
-    'version': '0.1.0',
+    'version': '0.2.0',
     'id': 'variogram',
     'title': {
         'en': 'Variogram',
@@ -15,7 +15,7 @@ PROCESS_METADATA = {
     },
     'description': {
         'en': 'Calculate a Variogram for the input dataset.',
-        'de': 'Bereichnung eines Variogramms für den angegebenen Datensatz.',
+        'de': 'Berechnung eines Variogramms für den angegebenen Datensatz.',
     },
     'keywords': ['variogram', 'geostatistics', 'SciKit-GStat'],
     'links': [{
@@ -143,6 +143,40 @@ PROCESS_METADATA = {
             'metadata': None,
             'keywords': ['lag', 'maxlag', 'maximum lag']
         },
+        'sill': {
+            'title': 'Manual fit - sill',
+            'description': "Only valid if `fitMethod=='manual'`, ignored otherwise. Variogram parameter *sill* for manual parameterization.",
+            'schema': {
+                'type': 'number'
+            },
+            'minOccurs': 0,
+            'maxOccurs': 1,
+            'metadata': None,
+            'keywords': ['manual fitting', 'sill', 'variogram parameter']
+        },
+        'range': {
+            'title': 'Manual fit - range',
+            'description': "Only valid if `fitMethod=='manual'`, ignored otherwise. Variogram parameter *range* for manual parameterization.",
+            'schema': {
+                'type': 'number'
+            },
+            'minOccurs': 0,
+            'maxOccurs': 1,
+            'metadata': None,
+            'keywords': ['manual fitting', 'range', 'variogram parameter']
+        },
+        'nugget': {
+            'title': 'Manual fit - nugget',
+            'description': "Only valid if `fitMethod=='manual'`, ignored otherwise. Variogram parameter *nugget* for manual parameterization.",
+            'schema': {
+                'type': 'number'
+            },
+            'minOccurs': 0,
+            'maxOccurs': 1,
+            'metadata': None,
+            'keywords': ['manual fitting', 'nugget', 'variogram parameter']
+        },
+        
     },
     'outputs': {
         'params': {
@@ -164,21 +198,28 @@ PROCESS_METADATA = {
     },
     'example': {
         'inputs': {
-            'data_uri': 'http://localhost:5000',
+            'data': 'http://localhost:5000/collections/19/items?f=json&limit=150',
             'n_lags': 15,
+            'model': 'gaussian',
+            'maxlag': 'median'
         }
     }
 }
 
 
 class VariogramProcessor(BaseProcessor):
-    """"""
+    """
+    OGC API - processes implementation of skgstat.Variogram.
+    Implements the Variogram class from SciKit-GStat to estimate empirical variograms and fit
+    theoretical variogram functions to the data. The process can load OGC API - feature collections
+    of POINT geometries or accept the GeoJSON directly.
+    """
     def __init__(self, processor_def) -> None:
         """Initialize the VariogramProcessor"""
         super().__init__(processor_def, PROCESS_METADATA)
 
     def execute(self, data) -> Tuple[str, dict]:
-        """"""
+        """Execute the process. Adding a 'data' key to the inputs dictionary is mandatory"""
         # get the uri
         if 'data' not in data:
             raise ProcessorExecuteError('Missing data or data URI')
@@ -208,6 +249,14 @@ class VariogramProcessor(BaseProcessor):
         vparams['fit_sigma'] = data.get('fitSigma')
         vparams['maxlag'] = data.get('maxlag')
         
+        # check fit method
+        if vparams['fit_method'] == 'manual':
+            try:
+                vparams['sill'] = data['sill']
+                vparams['range'] = data['range']
+                vparams['nugget'] = data.get('nugget')
+            except KeyError:
+                raise ProcessorExecuteError("If the fit method is 'manual', the following parameters are required: 'sill', 'range' and 'nugget'.")
 
         # create a variogram
         try:
